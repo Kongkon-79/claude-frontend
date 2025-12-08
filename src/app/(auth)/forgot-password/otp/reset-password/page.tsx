@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { Suspense } from 'react'
 import ResetPasswordForm from './_components/reset-password-form'
 const ResetPasswordPage = () => {
   return (
@@ -8,7 +8,11 @@ const ResetPasswordPage = () => {
         <Image src="/assets/images/auth-img.png" alt="Auth Image" width={1000} height={1000} className='object-cover w-full h-screen' />
       </div>
       <div className='md:col-span-1 flex items-center justify-center'>
-        <ResetPasswordForm />
+        <Suspense fallback={<div>Loading...</div>}>
+          <ResetPasswordForm />
+        </Suspense>
+
+
       </div>
     </div>)
 }

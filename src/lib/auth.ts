@@ -6,7 +6,7 @@ export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: "jwt",
-    maxAge: 30 * 24 * 60 * 60, // 30 day
+    maxAge: 30 * 24 * 60 * 60,
   },
   providers: [
     CredentialsProvider({
@@ -53,10 +53,11 @@ export const authOptions: NextAuthOptions = {
 
           return {
             id: user._id,
-            userName: user.userName,
+            firstName: user.firstName,
+            lastName: user.lastName,
             email: user.email,
             role: user.role,
-            imageLink: user.imageLink,
+            profileImage: user.profileImage,
             accessToken,
           };
         } catch (error) {
@@ -76,10 +77,11 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }: { token: JWT; user?: any }) {
       if (user) {
         token.id = user.id;
-        token.userName = user.userName;
+        token.firstName = user.firstName;
+        token.lastName = user.lastName;
         token.email = user.email;
         token.role = user.role;
-        token.imageLink = user.imageLink;
+        token.profileImage = user.profileImage;
         token.accessToken = user.accessToken;
       }
       return token;
@@ -89,10 +91,11 @@ export const authOptions: NextAuthOptions = {
     async session({ session, token }: { session: any; token: JWT }) {
       session.user = {
         id: token.id,
-        userName: token.userName,
+        firstName: token.firstName,
+        lastName: token.lastName,
         email: token.email,
         role: token.role,
-        imageLink: token.imageLink,
+        profileImage: token.profileImage,
         accessToken: token.accessToken,
       };
       return session;

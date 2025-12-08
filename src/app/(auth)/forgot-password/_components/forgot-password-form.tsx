@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import Image from 'next/image'
+import { useMutation } from "@tanstack/react-query";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,6 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   email: z.string().email({
@@ -23,8 +25,9 @@ const formSchema = z.object({
   }),
 });
 
+
+
 const ForgotPasswordForm = () => {
-  const isPending = false;
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -32,9 +35,32 @@ const ForgotPasswordForm = () => {
     },
   });
 
+  const {mutate, isPending} = useMutation({
+    mutationKey: ["forgot-password"],
+    mutationFn : async (values:{email:string})=>{
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/forgot-password`,{
+        method : "POST",
+        headers: {
+          "Content-Type" : "application/json"
+        },
+        body : JSON.stringify(values)
+      });
+      return res.json();
+    },
+    onSuccess: (data)=>{
+      if(!data?.success){
+        toast?.error(data?.message || "Something went wrong");
+        return
+      }
+      toast?.success(data?.message || "OTP sent to your email");
+      // router.push("/login")
+    }
+  })
+
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
    console.log(values);
+   mutate(values)
   }
   return (
     <div>
