@@ -6,7 +6,7 @@ const ActivateYourProfile = () => {
     <div className='bg-[#F4FFF4] py-10 md:py-14 lg:py-16'>
         <div className='container grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-20'>
             <div className="md:col-span-1">
-                <Image src="/assets/images/activate-your-profile.png" alt="activate-your-profile" width={1000} height={1000}/>
+                <Image src="/assets/images/activate-your-profile.png" alt="activate-your-profile" width={1000} height={1000} className='object-contain'/>
             </div>
              <div className="md:col-span-1 flex flex-col justify-center">
                 <h3 className='text-3xl md:text-4xl lg:text-[48px] font-normal text-[#131313] leading-[120%]'>Lorem Ipsum is simply dummy text of the </h3>
