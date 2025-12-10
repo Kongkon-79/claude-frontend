@@ -20,6 +20,9 @@ import { useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const formSchema = z
   .object({
@@ -49,44 +52,68 @@ const formSchema = z
 const SignupForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [confirmShowPassword, setConfirmShowPassword] = useState(false);
-  const isPending = false;
+  const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      firstName:"",
-      lastName:"",
+      firstName: "",
+      lastName: "",
       email: "",
       password: "",
-      confirmPassword:"",
+      confirmPassword: "",
       rememberMe: false,
     },
   });
 
+  const { mutate, isPending } = useMutation({
+    mutationKey: ["sign-up"],
+    mutationFn: async (values: z.infer<typeof formSchema>) => {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/register
+`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      })
+      return res.json();
+    },
+    onSuccess: (data)=>{
+      if(!data?.success){
+        toast?.error(data?.message || "Something went wrong");
+        return
+      }
+      toast?.success(data?.message || "Registration successful");
+      router.push("/login")
+    }
+  })
+
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
-console.log(values)
+    console.log(values)
+    mutate(values)
   }
   return (
     <div>
       <div className="w-full md:w-[570px] bg-white rounded-[16px] border-[2px] border-[#E7E7E7] shadow-[0px_0px_32px_0px_#0000001F] p-8">
         <div className="w-full flex items-center justify-center pb-4">
           <Link href="/">
-          <Image src="/assets/images/auth-logo.png" alt="auth logo" width={500} height={500} className="w-[290px] h-[80px] object-contain"/>
+            <Image src="/assets/images/auth-logo.png" alt="auth logo" width={500} height={500} className="w-[290px] h-[80px] object-contain" />
           </Link>
         </div>
-  <p className="text-base font-normal text-[#616161] leading-[150%] text-center pt-2">
+        <p className="text-base font-normal text-[#616161] leading-[150%] text-center pt-2">
           Welcome to Website
         </p>
         <h3 className="text-2xl md:text-[32px] lg:text-[40px] font-normal text-[#131313] text-center leading-[120%] ">
-          Create an account 
+          Create an account
         </h3>
-       
+
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             className="space-y-4 pt-5 md:pt- lg:pt-8"
           >
-              <FormField
+            <FormField
               control={form.control}
               name="firstName"
               render={({ field }) => (
@@ -105,7 +132,7 @@ console.log(values)
                 </FormItem>
               )}
             />
-              <FormField
+            <FormField
               control={form.control}
               name="lastName"
               render={({ field }) => (
@@ -148,7 +175,7 @@ console.log(values)
               name="password"
               render={({ field }) => (
                 <FormItem>
-                    <FormLabel className="text-base font-medium leading-[150%] text-[#424242]">
+                  <FormLabel className="text-base font-medium leading-[150%] text-[#424242]">
                     Password <sup className="text-[#8C311E]">*</sup>
                   </FormLabel>
                   <FormControl>
@@ -182,8 +209,8 @@ console.log(values)
               name="confirmPassword"
               render={({ field }) => (
                 <FormItem>
-                    <FormLabel className="text-base font-medium leading-[150%] text-[#424242]">
-                   Confirm Password <sup className="text-[#8C311E]">*</sup>
+                  <FormLabel className="text-base font-medium leading-[150%] text-[#424242]">
+                    Confirm Password <sup className="text-[#8C311E]">*</sup>
                   </FormLabel>
                   <FormControl>
                     <div className="relative">
@@ -240,9 +267,8 @@ console.log(values)
             <div className="pt-2">
               <Button
                 disabled={isPending}
-                className={`text-base font-medium text-white cursor-pointer leading-[120%] rounded-[8px] py-4 w-full h-[51px] ${
-                  isPending ? "opacity-50 cursor-not-allowed" : "bg-primary"
-                }`}
+                className={`text-base font-medium text-white cursor-pointer leading-[120%] rounded-[8px] py-4 w-full h-[51px] ${isPending ? "opacity-50 cursor-not-allowed" : "bg-primary"
+                  }`}
                 type="submit"
               >
                 {isPending ? "Creating..." : "Create Account"}
@@ -254,9 +280,9 @@ console.log(values)
               <span className="w-1/3 border-b border-[#6C6C6C]"/>
             </div> */}
             <div>
-              
+
               <p className="text-sm font-normal leading-[150%] text-[#616161] text-center">Already have an account? <Link href="/login" className="text-primary hover:underline">Log in</Link></p>
-              </div>
+            </div>
           </form>
         </Form>
       </div>

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { Suspense } from 'react'
 import OtpForm from './_components/otp-form'
 const OtpPage = () => {
   return (
@@ -8,7 +8,10 @@ const OtpPage = () => {
         <Image src="/assets/images/auth-img.png" alt="Auth Image" width={1000} height={1000} className='object-cover w-full h-screen' />
       </div>
       <div className='md:col-span-1 w-full flex items-center justify-center'>
-        <OtpForm />
+        <Suspense fallback={<div>Loading...</div>}>
+          <OtpForm />
+        </Suspense>
+
       </div>
     </div>)
 }
