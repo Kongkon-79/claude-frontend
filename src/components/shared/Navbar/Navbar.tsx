@@ -22,16 +22,16 @@ const Navbar = () => {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
-              <Link href="/" className={`text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-[300ms] ${pathname === "/" ? "border-b-[2px] border-primary" : "border-0"}`}>
+              <Link href="/" className={`text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/" ? "border-b-[2px] border-primary" : "border-0"}`}>
                 Home
               </Link>
-              <Link href="/services" className={`text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-[300ms] ${pathname === "/services" ? "border-b-[2px] border-primary" : "border-0"}`}>
+              <Link href="/services" className={`text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/services" ? "border-b-[2px] border-primary" : "border-0"}`}>
                 Services
               </Link>
-              <Link href="/about-us" className={`text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-[300ms] ${pathname === "/about-us" ? "border-b-[2px] border-primary" : "border-0"}`}>
+              <Link href="/about-us" className={`text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/about-us" ? "border-b-[2px] border-primary" : "border-0"}`}>
                 About Us
               </Link>
-              <Link href="/contact-us" className={`text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-[300ms] ${pathname === "/contact-us" ? "border-b-[2px] border-primary" : "border-0"}`}>
+              <Link href="/contact-us" className={`text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/contact-us" ? "border-b-[2px] border-primary" : "border-0"}`}>
                 Contact Us
               </Link>
             </div>
@@ -58,16 +58,16 @@ const Navbar = () => {
           {/* Mobile Menu */}
           {isOpen && (
             <div className="mt-4 md:hidden flex flex-col space-y-3 pb-4">
-              <Link href="/" className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-[300ms] ${pathname === "/" ? "border-b-[2px] border-primary" : "border-0"}`}>
+              <Link href="/" className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/" ? "border-b-[2px] border-primary" : "border-0"}`}>
                 Home
               </Link>
-              <Link href="/services" className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-[300ms] ${pathname === "/services" ? "border-b-[2px] border-primary" : "border-0"}`}>
+              <Link href="/services" className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/services" ? "border-b-[2px] border-primary" : "border-0"}`}>
                 Services
               </Link>
-              <Link href="/about-us" className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-[300ms] ${pathname === "/about-us" ? "border-b-[2px] border-primary" : "border-0"}`}>
+              <Link href="/about-us" className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/about-us" ? "border-b-[2px] border-primary" : "border-0"}`}>
                 About Us
               </Link>
-              <Link href="/contact-us" className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-[300ms] ${pathname === "/contact-us" ? "border-b-[2px] border-primary" : "border-0"}`}>
+              <Link href="/contact-us" className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/contact-us" ? "border-b-[2px] border-primary" : "border-0"}`}>
                 Contact Us
               </Link>
               <div className="flex items-center justify-between gap-4 pt-2">
