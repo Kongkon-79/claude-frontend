@@ -6,7 +6,7 @@ const HowOurAnalytics = () => {
         <div className='py-6 md:py-10 lg:py-16 bg-[#F4FFF4]'>
             <div className="container grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-10 lg:gap-20">
                 <div className='md:col-span-2'>
-                    <Image src="/assets/images/how-our-analytics.png" alt="how our analytics" width={1000} height={1000} className='w-[641px] h-[547px] object-cover' />
+                    <Image src="/assets/images/how-our-analytics.png" alt="how our analytics" width={1000} height={1000} className='w-[641px] h-[400px] md:h-[500px] lg:h-[547px] object-cover' />
                 </div>
                 <div className='md:col-span-3 h-full flex flex-col justify-center'>
                     <h3 className='text-3xl md:text-4xl lg:text-[48px] text-[#131313] font-normal leading-[120%]'>How Our Analytics Process Works</h3>
@@ -47,7 +47,7 @@ const HowOurAnalytics = () => {
                     </div>
 
                     {/* button  */}
-                    <div>
+                    <div className='w-full flex items-center justify-center md:justify-start'>
                         <button className='h-[48px] py-3 px-12 rounded-full bg-primary text-white text-base md:text-lg leading-[120%] font-normal '>Get Started</button>
                     </div>
                 </div>
