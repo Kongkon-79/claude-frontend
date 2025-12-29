@@ -159,7 +159,7 @@ const WhyDataMatters = () => {
                       <h5 className="text-sm md:text-base font-normal leading-[150%] text-[#0A1628]">
                         {item.title}
                       </h5>
-                      <p className="text-sm text-[#616161] font-normal leading-[150%] pt-2 md:pt-3">
+                      <p className="text-sm text-[#616161] font-normal leading-[150%] pt-2 ">
                         {item.description}
                       </p>
                     </div>
