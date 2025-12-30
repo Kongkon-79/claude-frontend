@@ -1,3 +1,109 @@
+// "use client";
+
+// import Image from "next/image";
+// import Link from "next/link";
+// import { usePathname } from "next/navigation";
+// import { useEffect, useState } from "react";
+
+// import { Button } from "@/components/ui/button";
+// import MobileNavbar from "./MobileNavbar";
+// import { navLinks } from "@/components/utils/navLinks";
+
+// const Navbar = () => {
+//   const pathname = usePathname();
+//   const [isAtTop, setIsAtTop] = useState(true);
+
+//   useEffect(() => {
+//     const handleScroll = () => setIsAtTop(window.scrollY <= 50);
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   // Define routes where navbar should be white at top
+//   const whiteNavRoutes = [
+//     "/",
+//     "/services",
+//     "/about-us",
+//     "/contact-us",
+//   ];
+
+//   // Check if current route is in whiteNavRoutes
+//   const isWhiteNavRoute = whiteNavRoutes.includes(pathname);
+
+
+//   // ✅ Adjust padding dynamically
+//   const containerPadding = pathname === "/" && isAtTop ? "py-2" : "py-0";
+
+//   return (
+//     <div
+//       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isAtTop && isWhiteNavRoute ? "bg-transparent" : "bg-white shadow-md"
+//         }`}
+//     >
+//       <div
+//         className={`container transition-all duration-500 ${containerPadding}`}
+//       >
+//         <div className="flex items-center justify-between">
+//           {/* Logo */}
+//           <Link href={"/"}>
+//             <Image
+//               src={"/assets/images/logo.png"}
+//               alt="logo"
+//               width={1000}
+//               height={1000}
+//               className="h-[72px] w-[216px] transition-all duration-500"
+//             />
+//           </Link>
+
+//           {/* Desktop nav */}
+//           <div className="hidden md:block">
+//             <ul className="flex items-center gap-2 text-primary">
+//               {navLinks.map((item, index) => {
+//                 const isActive = item.link === pathname;
+
+//                 // Text color logic
+//                 const textColor =
+//                   isWhiteNavRoute && isAtTop ? "text-white" : "text-black";
+
+//                 // Normal links
+//                 return (
+//                   <li key={index}>
+//                     <Link
+//                       href={item.link}
+//                       className={`p-2 px-4 text-base transition-all duration-500 ease-in-out ${textColor} ${isActive ? "font-semibold underline" : "font-normal"
+//                         }`}
+//                     >
+//                       {item.label}
+//                     </Link>
+//                   </li>
+//                 );
+//               })}
+//             </ul>
+//           </div>
+//           <div className="flex items-center gap-4">
+//             <Link href="/login">
+//               <Button variant="ghost" size="sm" className="h-[48px] hover:bg-primary hover:text-white hover:border-none text-base text-primary font-normal leading-[150%] border-[2px] border-primary py-2 px-12 rounded-full">
+//                 Sign In
+//               </Button>
+//             </Link>
+//             <Link href="/sign-up">
+//               <Button size="sm" className="h-[48px] py-2 px-12 rounded-full bg-primary hover:bg-primary/90 text-white text-base font-normal leading-[150%] ">
+//                 Register
+//               </Button></Link>
+//           </div>
+
+//           {/* Mobile menu */}
+//           <MobileNavbar />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+
 "use client"
 
 import { useState, useEffect } from "react"
