@@ -9,7 +9,7 @@ const ActivateYourProfile = () => {
                 <Image src="/assets/images/activate-your-profile.png" alt="activate-your-profile" width={1000} height={1000} className='object-contain'/>
             </div>
              <div className="order-1 md:col-span-1 flex flex-col justify-center">
-                <h3 className='text-3xl md:text-4xl lg:text-[48px] font-normal text-[#131313] leading-[120%]'>Lorem Ipsum is simply dummy text of the </h3>
+                <h3 className='text-2xl md:text-3xl lg:text-4xl font-normal text-[#131313] leading-[120%]'>Lorem Ipsum is simply dummy text of the </h3>
                 <p className='text-sm lg:text-base font-normal text-[#616161] leading-[150%] py-3 md:py-4 text-justify'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industr&rsquo;`s standard dummy text ever since the 1500s, when an unknow</p>
                 <div>
                     <button className='bg-primary py-3 px-10 rounded-full text-base lg:text-lg font-normal leading-[120%] text-white '>Activate Your Profile</button>

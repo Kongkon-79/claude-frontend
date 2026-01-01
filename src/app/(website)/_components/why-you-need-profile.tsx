@@ -9,7 +9,7 @@ const WhyYouNeedAProfile = () => {
     <div className="bg-[#F4FFF4] py-6 md:py-10 lg:py-16">
 
       <div className="container">
-        <h3 className="text-3xl md:text-4xl lg:text-[48px] text-[#131313] font-normal leading-[120%]">
+        <h3 className="text-2xl md:text-3xl lg:text-4xl text-[#131313] font-normal leading-[120%]">
           Why You Need a Profile
         </h3>
 
@@ -97,7 +97,7 @@ const WhyYouNeedAProfile = () => {
 
         <div className="relative h-[390px] w-full bg-[url('/assets/images/you-need-profile-bg.jpg')] bg-cover bg-center bg-no-repeat rounded-[8px] flex flex-col items-center justify-center animate-moveBackground">
         <div className="absolute inset-0 bg-black/60 rounded-[8px]"/>
-          <h4 className="text-3xl md:text-4xl lg:text-[48px] text-white font-normal leading-[120%] text-center relative z-10">Don&apos;t Stay Invisible</h4>
+          <h4 className="text-2xl md:text-3xl lg:text-4xl text-white font-normal leading-[120%] text-center relative z-10">Don&apos;t Stay Invisible</h4>
           <p className="text-sm md:text-base text-[#E7E7E7] text-center font-normal leading-[150%] py-4 md:py-5 lg:py-6 relative z-10">Without a profile, you don’t exist in the recruitment world.
           </p>
          <Link href="/sign-up">

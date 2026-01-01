@@ -6,7 +6,7 @@ const AnalyticSoccer = () => {
         <div className='py-4 md:py-14 lg:py-[72px]'>
             <div className="container grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16">
                 <div className='order-2 md:order-1 md:col-span-1 flex flex-col justify-center'>
-                    <h1 className='text-3xl md:text-4xl lg:text-[48px] text-[#131313] leading-[120%] font-normal '>Analytic Soccer Experts
+                    <h1 className='text-2xl md:text-3xl lg:text-4xl text-[#131313] leading-[120%] font-normal '>Analytic Soccer Experts
                         Nationwide</h1>
                     <p className='text-sm lg:text-base font-normal leading-[150%] text-[#616161] py-3 md:py-4'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknow</p>
                     <div className='w-full md:w-[90%] grid grid-cols-1 md:grid-cols-2 gap-6'>

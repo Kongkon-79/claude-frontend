@@ -8,8 +8,8 @@ const WhyWeAreUnique = () => {
             <div className='container'>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
                     <div className="md:col-span-1">
-                        <h3 className='text-3xl md:text-4xl lg:text-[48px] text-[#131313] font-normal leading-[120%]'>Why We&lsquo;re Unique</h3>
-                        <p className='text-lg md:text-xl lg:text-2xl text-[#131313] font-normal leading-[120%] py-4 md:py-5'>There is no global, <span className="text-primary">centralized data platform</span> where amateur players can:</p>
+                        <h3 className='text-2xl md:text-3xl lg:text-4xl text-[#131313] font-normal leading-[120%]'>Why We&lsquo;re Unique</h3>
+                        <p className='text-lg md:text-xl lg:text-[22px] text-[#131313] font-normal leading-[120%] py-4 md:py-5'>There is no global, <span className="text-primary">centralized data platform</span> where amateur players can :</p>
                          <ul className='list-disc list-inside'>
                         <li className='text-base font-normal leading-[150%] text-[#616161]'>Access verified performance data</li>
                         <li className='text-base font-normal leading-[150%] text-[#616161] py-4 md:py-5'>Receive objective ratings</li>
@@ -73,6 +73,10 @@ const WhyWeAreUnique = () => {
                             <li className='flex items-center gap-2 text-sm md:text-base text-[#616161] leading-[150%] font-normal'><CircleCheckBig className="text-primary" />Transparency & Fairness</li>
                             <li className='flex items-center gap-2 text-sm md:text-base text-[#616161] leading-[150%] font-normal py-4'><CircleCheckBig className="text-primary" />Verified Performance Profile</li>
                         </ul>
+                        {/* button  */}
+                    <div className='w-full flex items-center justify-center'>
+                        <button className='h-[48px] py-3 px-12 rounded-full bg-primary text-white text-base md:text-lg leading-[120%] font-normal '>Buy Now</button>
+                    </div>
                     </div>
                 </div>
             </div>

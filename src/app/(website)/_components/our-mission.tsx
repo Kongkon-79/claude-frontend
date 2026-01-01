@@ -33,7 +33,7 @@
 
 //             {/* center  */}
 //             <div>
-//                 <h3 className="text-3xl md:text-4xl lg:text-[48px] text-[#131313] leading-[120%] font-normal text-center">Our Mission</h3>
+//                 <h3 className="text-2xl md:text-3xl lg:text-4xl text-[#131313] leading-[120%] font-normal text-center">Our Mission</h3>
 //                 <p className='text-sm md:text-base text-[#616161] leading-[150%] font-normal pt-3 text-center'>Give amateur players the same digital visibility as professional athletes. </p>
 
 
@@ -138,7 +138,7 @@ const OurMission = () => {
 
       {/* Center Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
-        <h3 className="text-3xl md:text-4xl lg:text-[48px] font-normal text-[#131313] leading-[120%]">
+        <h3 className="text-2xl md:text-3xl lg:text-4xl font-normal text-[#131313] leading-[120%]">
           Our Mission
         </h3>
 

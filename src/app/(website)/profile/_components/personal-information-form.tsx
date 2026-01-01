@@ -483,7 +483,8 @@ const PersonalInformationForm = () => {
                                                     <SelectValue placeholder="Select" />
                                                 </SelectTrigger>
                                                 <SelectContent className="h-[200px] overflow-y-auto">
-                                                    <SelectItem value="amateur">Amateur</SelectItem>
+                                                    <SelectItem value="semi-professional">Semi Professional</SelectItem>
+                                                     <SelectItem value="adult">Adult</SelectItem>
                                                     <SelectItem value="U9">U9</SelectItem>
                                                     <SelectItem value="U10">U10</SelectItem>
                                                     <SelectItem value="U11">U11</SelectItem>
