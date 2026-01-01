@@ -121,7 +121,7 @@ const WhyDataMatters = () => {
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-[48px] font-normal text-[#131313] leading-[120%]">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal text-[#131313] leading-[120%]">
             Why Data Matters
           </h2>
           <p className="text-sm md:text-base leading-[150%] font-normal text-[#616161] pt-4 md:pt-5">
@@ -141,7 +141,7 @@ const WhyDataMatters = () => {
                 <div className="hidden md:block absolute -left-4 top-0 h-full w-[4px] bg-[#131313]" />
               )}
 
-              <h4 className="text-xl md:text-2xl lg:text-[32px] font-normal leading-[120%] text-black underline underline-offset-8 decoration-4 pb-6 md:pb-7 lg:pb-8">
+              <h4 className="text-xl md:text-2xl lg:text-3xl font-normal leading-[120%] text-black underline underline-offset-8 decoration-4 pb-6 md:pb-7 lg:pb-8">
                 {column.heading}
               </h4>
 

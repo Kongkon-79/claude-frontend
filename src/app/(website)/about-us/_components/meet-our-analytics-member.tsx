@@ -32,7 +32,7 @@ const MeetOurAnalyticsMember = () => {
   return (
     <div className='bg-[#F4FFF4] py-6 md:py-10 lg:py-16'>
         <div className="container">
-              <h3 className='text-3xl md:text-4xl lg:text-[48px] text-[#131313] text-center font-normal leading-[120%]'>Meet Our Analytics Members</h3>
+              <h3 className='text-2xl md:text-3xl lg:text-4xl text-[#131313] text-center font-normal leading-[120%]'>Meet Our Analytics Members</h3>
                     <p className='text-sm md:text-base text-[#616161] font-normal text-center leading-[120%] pt-4 md:pt-5 lg:pt-6 '>To activate your profile, you must first register and purchase our data service.</p>
              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 md:pt-8 lg:pt-10'>
             {
