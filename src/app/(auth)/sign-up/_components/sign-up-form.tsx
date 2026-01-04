@@ -99,23 +99,23 @@ const SignupForm = () => {
   }
   return (
     <div>
-      <div className="w-full md:w-[570px] bg-white rounded-[16px] border-[2px] border-[#E7E7E7] shadow-[0px_0px_32px_0px_#0000001F] p-8">
-        <div className="w-full flex items-center justify-center pb-4">
+      <div className="w-full md:w-[570px] bg-white rounded-[16px] border-[2px] border-[#E7E7E7] shadow-[0px_0px_32px_0px_#0000001F] px-8 py-6">
+        <div className="w-full flex items-center justify-center pb-2">
           <Link href="/">
             <Image src="/assets/images/auth-logo.png" alt="auth logo" width={500} height={500} className="w-[290px] h-[80px] object-contain" />
           </Link>
         </div>
-        <p className="text-base font-normal text-[#616161] leading-[150%] text-center pt-2">
+        <p className="text-base font-normal text-[#616161] leading-[150%] text-center pt-1">
           Welcome to Website
         </p>
-        <h3 className="text-2xl md:text-[32px] lg:text-[40px] font-normal text-[#131313] text-center leading-[120%] ">
+        <h3 className="text-2xl md:text-3xl lg:text-4xl font-normal text-[#131313] text-center leading-[120%] ">
           Create an account
         </h3>
 
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-4 pt-5 md:pt- lg:pt-8"
+            className="space-y-3 pt-3 md:pt-4 lg:pt-5"
           >
             <FormField
               control={form.control}
@@ -131,7 +131,7 @@ const SignupForm = () => {
                       <button
                         type="button"
                         onClick={() => field.onChange("player")}
-                        className={`flex-1 text-sm font-medium py-2 rounded-full transition-all
+                        className={`flex-1 text-sm font-medium py-2 rounded-full transition-all ease-in-out duration-300
               ${field.value === "player"
                             ? "bg-primary text-white"
                             : "text-[#2A2A2A]"
@@ -143,7 +143,7 @@ const SignupForm = () => {
                       <button
                         type="button"
                         onClick={() => field.onChange("gk")}
-                        className={`flex-1 text-sm font-medium py-2 rounded-full transition-all
+                        className={`flex-1 text-sm font-medium py-2 rounded-full transition-all ease-in-out duration-300
               ${field.value === "gk"
                             ? "bg-primary text-white"
                             : "text-[#2A2A2A]"
