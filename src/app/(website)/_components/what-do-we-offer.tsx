@@ -14,6 +14,7 @@ const WhatDoWeOffer = () => {
                         <li className='text-base font-normal leading-[150%] text-[#616161]'>Specific technical and tactical data</li>
                         <li className='text-base font-normal leading-[150%] text-[#616161] py-4 md:py-5 lg:py-6'>Ratings for every game to measure your progression</li>
                         <li className='text-base font-normal leading-[150%] text-[#616161]'>Personalized highlights showcasing your key actions</li>
+                         <li className='text-base font-normal leading-[150%] text-[#616161] py-4 md:py-5 lg:py-6'>Structured Feedback</li>
                     </ul>
 
                     <div className="w-full flex items-center justify-center">

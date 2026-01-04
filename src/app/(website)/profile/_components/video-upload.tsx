@@ -374,6 +374,9 @@ export default function VideoUpload({ videos }: { videos: string[] }) {
         <p className="font-semibold">
           {uploading ? "Uploading..." : "Click to Add Videos"}
         </p>
+        <p className="font-semibold text-gray-500">
+          Only 3 videos allow
+        </p>
       </div>
 
       <input
