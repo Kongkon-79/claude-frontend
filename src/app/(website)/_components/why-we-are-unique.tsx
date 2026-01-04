@@ -25,33 +25,33 @@ const WhyWeAreUnique = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-6 md:py-10 lg:py-12'>
 
-                    <div className='md:col-span-1 flex flex-col items-center rounded-[16px] p-4 border border-[#B6B6B6)] group hover:bg-green-600 transition'>
+                    <div className='md:col-span-1 flex flex-col items-center rounded-[16px] p-4 border border-[#B6B6B6)] group hover:bg-primary transition'>
                         <div className='flex flex-col items-start'>
                             <div className='bg-[#E6F4E6] rounded-[8px] p-5 inline-flex' >
 
                                 <Database className='text-primary' />
                             </div>
                             <h4 className='text-sm lg:text-base font-normal text-[#0A1628] group-hover:text-white leading-[120%] py-3 md:py-4'>Access verified performance data</h4>
-                            <p className='text-sm font-normal text-[#616161] group-hover:text-white leading-[150%]'>Every stat, every match, every achievement verified and recorded in one place. No morescattered records or lost history. </p>
+                            <p className='text-sm font-normal text-[#616161] group-hover:text-white leading-[150%]'>Every stat, every match, every achievement verified and recorded in one place. No more scattered records or lost history. </p>
                         </div>
                     </div>
-                    <div className='md:col-span-1 flex flex-col items-center rounded-[16px] p-4 border border-[#B6B6B6)] group hover:bg-green-600 transition'>
+                    <div className='md:col-span-1 flex flex-col items-center rounded-[16px] p-4 border border-[#B6B6B6)] group bg-green-700 transition'>
                         <div className='flex flex-col items-start'>
                             <div className='bg-[#E6F4E6] rounded-[8px] p-5 inline-flex' >
 
                                 <Award className='text-primary' />
                             </div>
-                            <h4 className='text-sm lg:text-base font-normal  text-[#0A1628] group-hover:text-white leading-[120%] py-3 md:py-4'>Receive objective ratings</h4>
-                            <p className='text-sm font-normal text-[#616161] group-hover:text-white leading-[150%]'>Get rated based on real performance metrics, not opinions. Fair, transparent, and comparable across regions</p>
+                            <h4 className='text-sm lg:text-base font-normal  text-white group-hover:text-white leading-[120%] py-3 md:py-4'>Receive objective ratings</h4>
+                            <p className='text-sm font-normal text-white group-hover:text-white leading-[150%]'>Get rated based on real performance metrics, not opinions. Fair, transparent, and comparable across regions</p>
                         </div>
                     </div>
-                    <div className='md:col-span-1 flex flex-col items-center rounded-[16px] p-4 border border-[#B6B6B6)] group hover:bg-green-600 transition'>
+                    <div className='md:col-span-1 flex flex-col items-center rounded-[16px] p-4 border border-[#B6B6B6)] group hover:bg-primary transition'>
                         <div className='flex flex-col items-start'>
                             <div className='bg-[#E6F4E6] rounded-[8px] p-5 inline-flex' >
 
                                 <TrendingUp className='text-primary' />
                             </div>
-                            <h4 className='text-sm lg:text-base font-normaltext-[#0A1628] group-hover:text-white leading-[120%] py-3 md:py-4'>Track their career progression and transfer history</h4>
+                            <h4 className='text-sm lg:text-base font-normaltext-[#0A1628] group-hover:text-white leading-[120%] py-3 md:py-4'>Track your career progression and transfer history</h4>
                             <p className='text-sm font-normal text-[#616161] group-hover:text-white leading-[150%]'>Track your entire football journey. Every club, every season, every progression milestone documented.</p>
                         </div>
                     </div>

@@ -394,7 +394,7 @@ const Navbar = () => {
                   pathname === "/about-us" ? "border-b-[2px] border-primary" : "border-0"
                 }`}
               >
-                About Us
+                Prices
               </Link>
               <Link
                 href="/contact-us"
