@@ -312,11 +312,13 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { signOut, useSession } from "next-auth/react"
+import { ChevronDown } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuLabel,
   DropdownMenuTrigger,
+  DropdownMenuItem
 } from "@/components/ui/dropdown-menu"
 import LogoutModal from "@/components/modals/LogoutModal"
 import { toast } from "sonner"
@@ -328,9 +330,23 @@ const Navbar = () => {
   const [logoutModalOpen, setLogoutModalOpen] = useState(false)
   const [open, setOpen] = useState(false)
 
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false)
+const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+
+
+
   const session = useSession()
   const status = session?.status
   const user = session?.data?.user
+
+  const serviceItems = [
+    {
+      label: "Profiles", link: "/profiles"
+    },
+    {
+      label: "Player Evalution Program", link: "/player-evalution-program"
+    }
+  ]
 
   // Replace with your actual base URL
   const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "https://your-api-url.com"
@@ -374,33 +390,58 @@ const Navbar = () => {
             <div className="hidden md:flex items-center gap-8">
               <Link
                 href="/"
-                className={`text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${
-                  pathname === "/" ? "border-b-[2px] border-primary" : "border-0"
-                }`}
+                className={`text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/" ? "border-b-[2px] border-primary" : "border-0"
+                  }`}
               >
                 Home
               </Link>
-              <Link
-                href="/services"
-                className={`text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${
-                  pathname === "/services" ? "border-b-[2px] border-primary" : "border-0"
-                }`}
-              >
-                Services
-              </Link>
+              {/* Services Dropdown - Desktop */}
+              <DropdownMenu modal={false}   open={desktopServicesOpen}
+  onOpenChange={setDesktopServicesOpen}>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    className={`text-sm md:text-base flex items-center gap-1 leading-[150%] text-[#131313] font-normal  transition-all duration-300 hover:text-primary ${pathname.startsWith("/profiles") ||
+                      pathname.startsWith("/player-evalution-program")
+                      ? "border-b-[2px] border-primary"
+                      : ""
+                      }`}
+                  >
+                    Services
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-300 ${desktopServicesOpen ? "rotate-180" : "rotate-0"
+                        }`}
+                    />
+                  </button>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent
+                  align="center"
+                  className="w-56 rounded-xl border bg-white p-2 shadow-lg mt-2"
+                >
+                  {serviceItems.map((item) => (
+                    <DropdownMenuItem key={item.link} asChild>
+                      <Link
+                        href={item.link}
+                        className="w-full rounded-md px-3 py-2 text-sm cursor-pointer text-[#131313] hover:bg-gray-100 transition"
+                      >
+                        {item.label}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+
               <Link
                 href="/prices"
-                className={`text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${
-                  pathname === "/prices" ? "border-b-[2px] border-primary" : "border-0"
-                }`}
+                className={`text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/prices" ? "border-b-[2px] border-primary" : "border-0"
+                  }`}
               >
                 Prices
               </Link>
               <Link
                 href="/contact-us"
-                className={`text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${
-                  pathname === "/contact-us" ? "border-b-[2px] border-primary" : "border-0"
-                }`}
+                className={`text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/contact-us" ? "border-b-[2px] border-primary" : "border-0"
+                  }`}
               >
                 Contact Us
               </Link>
@@ -422,14 +463,14 @@ const Navbar = () => {
                   <DropdownMenuContent className="p-2">
                     <Link href="/profile">
                       <DropdownMenuLabel className="cursor-pointer text-base md:text-lg text-[#131313] leading-[120%] font-medium hover:text-primary">
-                        Profiles
+                        Profile
                       </DropdownMenuLabel>
                     </Link>
-                    <Link href="#">
-                        <DropdownMenuLabel className="cursor-pointer text-base md:text-lg text-[#131313] leading-[120%] font-medium hover:text-primary">
-                          Player Evaluation Program
-                        </DropdownMenuLabel>
-                      </Link>
+                    {/* <Link href="#">
+                      <DropdownMenuLabel className="cursor-pointer text-base md:text-lg text-[#131313] leading-[120%] font-medium hover:text-primary">
+                        Player Evaluation Program
+                      </DropdownMenuLabel>
+                    </Link> */}
                     <Link href="/password-change">
                       <DropdownMenuLabel className="cursor-pointer text-base md:text-lg text-[#131313] leading-[120%] font-medium hover:text-primary">
                         Password Change
@@ -486,33 +527,54 @@ const Navbar = () => {
 
               <Link
                 href="/"
-                className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${
-                  pathname === "/" ? "border-b-[2px] border-primary" : "border-0"
-                }`}
+                className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/" ? "border-b-[2px] border-primary" : "border-0"
+                  }`}
               >
                 Home
               </Link>
-              <Link
-                href="/services"
-                className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${
-                  pathname === "/services" ? "border-b-[2px] border-primary" : "border-0"
-                }`}
-              >
-                Services
-              </Link>
+              {/* Services - Mobile */}
+              <button
+  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+  className="flex items-center justify-between w-full text-sm text-[#131313]"
+>
+  <span>Services</span>
+  <ChevronDown
+    className={`w-4 h-4 transition-transform ${
+      mobileServicesOpen ? "rotate-180" : "rotate-0"
+    }`}
+  />
+</button>
+
+{mobileServicesOpen && (
+  <div className="ml-4 flex flex-col gap-2">
+    {serviceItems.map((item) => (
+      <Link
+        key={item.link}
+        href={item.link}
+        className="text-sm hover:text-primary"
+        onClick={() => {
+          setIsOpen(false)
+          setMobileServicesOpen(false)
+        }}
+      >
+        {item.label}
+      </Link>
+    ))}
+  </div>
+)}
+
+
               <Link
                 href="/prices"
-                className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${
-                  pathname === "/prices" ? "border-b-[2px] border-primary" : "border-0"
-                }`}
+                className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/prices" ? "border-b-[2px] border-primary" : "border-0"
+                  }`}
               >
                 Prices
               </Link>
               <Link
                 href="/contact-us"
-                className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${
-                  pathname === "/contact-us" ? "border-b-[2px] border-primary" : "border-0"
-                }`}
+                className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/contact-us" ? "border-b-[2px] border-primary" : "border-0"
+                  }`}
               >
                 Contact Us
               </Link>
@@ -532,14 +594,14 @@ const Navbar = () => {
                     <DropdownMenuContent className="p-2">
                       <Link href="/profile">
                         <DropdownMenuLabel className="cursor-pointer text-base md:text-lg text-[#131313] leading-[120%] font-medium hover:text-primary">
-                          Profiles
+                          Profile
                         </DropdownMenuLabel>
                       </Link>
-                      <Link href="#">
+                      {/* <Link href="#">
                         <DropdownMenuLabel className="cursor-pointer text-base md:text-lg text-[#131313] leading-[120%] font-medium hover:text-primary">
                           Player Evaluation Program
                         </DropdownMenuLabel>
-                      </Link>
+                      </Link> */}
                       <Link href="/password-change">
                         <DropdownMenuLabel className="cursor-pointer text-base md:text-lg text-[#131313] leading-[120%] font-medium hover:text-primary">
                           Password Change

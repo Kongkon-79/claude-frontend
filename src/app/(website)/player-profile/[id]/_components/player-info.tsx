@@ -42,7 +42,7 @@ const PlayerInfo = ({ id }: { id: string }) => {
 
     const personalInfo = data?.data;
     return (
-        <div className='pt-7 pb-40'>
+        <div className='py-6'>
             <div className="container grid grid-cols-1 md:gris-cols-2 lg:grid-cols-5 gap-6 bg-white rounded-[16px] p-6 shadow-[0px_4px_24px_0px_#00000014
 ]">
                 <div className="md:col-span-1">
@@ -70,7 +70,7 @@ const PlayerInfo = ({ id }: { id: string }) => {
                             </span>
                         </li>
                         <li className="flex flex-col gap-2"><span className='text-base font-normal text-[#616161] leading-[150%]'>Height</span> <span className='text-lg md:text-xl text-[#131313] font-normal leading-[120%] '>{personalInfo?.hight || "N/A"}</span></li>
-                        <li className="flex flex-col gap-2"><span className='text-base font-normal text-[#616161] leading-[150%]'>Position</span> <span className='text-lg md:text-xl text-[#131313] font-normal leading-[120%] '>{personalInfo?.position.join(" , ") || "N/A"}</span></li>
+                        <li className="flex flex-col gap-2"><span className='text-base font-normal text-[#616161] leading-[150%]'>Position</span> <span className='text-lg md:text-xl text-[#131313] font-normal leading-[120%] '>{personalInfo?.position.join(", ") || "N/A"}</span></li>
                         <li className="flex flex-col gap-2"><span className='text-base font-normal text-[#616161] leading-[150%]'>League</span> <span className='text-lg md:text-xl text-[#131313] font-normal leading-[120%] '>{personalInfo?.league || "N/A"}</span></li>
                         <li className="flex flex-col gap-2"><span className='text-base font-normal text-[#616161] leading-[150%]'>Gender</span> <span className='text-lg md:text-xl text-[#131313] font-normal leading-[120%] '>{personalInfo?.gender || "N/A"}</span></li>
                         <li className="flex flex-col gap-2"><span className='text-base font-normal text-[#616161] leading-[150%]'>Institute Name</span> <span className='text-lg md:text-xl text-[#131313] font-normal leading-[120%] '>{personalInfo?.institute || "N/A"}</span></li>

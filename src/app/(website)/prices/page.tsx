@@ -1,27 +1,14 @@
 import React from 'react'
-// import OurGrowthStory from './_components/our-growth-story'
-// import MeetOurCertified from './_components/meet-our-certified'
-// import AnalyticSoccer from './_components/analytic-soccer'
-// import OurPromiseToYou from './_components/our-promise-to-you'
-// import ActivateYourProfile from '../contact-us/_components/activate-your-profile'
-// import MeetOurAnalyticsMember from './_components/meet-our-analytics-member'
-import BuyYourDataNow from './_components/buy-your-data-now'
-// import ProjectLeader from './_components/project-leaders'
+import IndividualPlayer from './_components/individual-player'
+import TeamsPlayer from './_components/teams-player'
 
-const AboutUsPage = () => {
+const ServicesPage = () => {
   return (
     <div>
-      {/* <AnalyticSoccer/>
-      <OurGrowthStory/>
-      <ActivateYourProfile/>
-      <MeetOurAnalyticsMember/>
-      <MeetOurCertified/>
-      <OurPromiseToYou/> */}
-
-        {/* <ProjectLeader/> */}
-      <BuyYourDataNow/>
+      <IndividualPlayer/>
+      <TeamsPlayer/>
     </div>
   )
 }
 
-export default AboutUsPage
+export default ServicesPage

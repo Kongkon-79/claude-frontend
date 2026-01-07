@@ -52,12 +52,8 @@ const formSchema = z.object({
     weight: z.string().min(2, {
         message: "Weight must be at least 2 characters.",
     }),
-    agencyName: z.string().min(2, {
-        message: "Agency Name must be at least 2 characters.",
-    }),
-    social_media: z.string().min(2, {
-        message: "Social Media must be at least 2 characters.",
-    }),
+    agencyName: z.string().optional(),
+    social_media: z.string().optional(),
     citizenship: z.string().min(2, {
         message: "citizenship must be at least 2 characters.",
     }),
@@ -88,7 +84,7 @@ const formSchema = z.object({
 }).refine((data) => {
     if (data.inSchoolOrCollege === "yes") {
         if (!data.institute || data.institute.trim().length < 2) return false
-        if (!data.gpa || data.gpa.trim().length === 0) return false
+        // if (!data.gpa || data.gpa.trim().length === 0) return false
     }
     return true
 }, { message: "Institute Name and GPA required", path: ["institute"] })
