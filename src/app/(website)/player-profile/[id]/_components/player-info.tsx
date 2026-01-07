@@ -42,7 +42,7 @@ const PlayerInfo = ({ id }: { id: string }) => {
 
     const personalInfo = data?.data;
     return (
-        <div className='pt-7 pb-40'>
+        <div className='py-6'>
             <div className="container grid grid-cols-1 md:gris-cols-2 lg:grid-cols-5 gap-6 bg-white rounded-[16px] p-6 shadow-[0px_4px_24px_0px_#00000014
 ]">
                 <div className="md:col-span-1">
