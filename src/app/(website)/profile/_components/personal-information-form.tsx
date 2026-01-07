@@ -84,7 +84,7 @@ const formSchema = z.object({
 }).refine((data) => {
     if (data.inSchoolOrCollege === "yes") {
         if (!data.institute || data.institute.trim().length < 2) return false
-        if (!data.gpa || data.gpa.trim().length === 0) return false
+        // if (!data.gpa || data.gpa.trim().length === 0) return false
     }
     return true
 }, { message: "Institute Name and GPA required", path: ["institute"] })
